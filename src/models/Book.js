@@ -12,9 +12,9 @@ const BookSchema = new mongoose.Schema({
 		type: [String],
 	},
 	author: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Author'
-  },
+		type: mongoose.Schema.Types.ObjectId,
+		ref: "Author",
+	},
 });
 
-export default mongoose.model("Book", BookSchema);
+module.exports = mongoose.model("Book", BookSchema);

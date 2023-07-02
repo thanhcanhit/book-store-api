@@ -3,6 +3,7 @@ const morgan = require("morgan");
 const path = require("path");
 const dotenv = require("dotenv");
 const connectDB = require("./config/connectDB");
+const router = require("./routes");
 
 const app = express();
 
@@ -20,9 +21,7 @@ app.use(express.json({ limit: "50mb" }));
 app.use(morgan("common"));
 
 // Routing
-app.get("/", (req, res) => {
-	res.send("Hello world");
-});
+router(app);
 
 app.listen(process.env.PORT, () => {
 	console.log(`Listening on http://localhost:${process.env.PORT}`);

@@ -5,13 +5,15 @@ const AuthorSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 	},
-  year: {
-    type: Number
-  },
-  books: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Book'
-  }]
+	year: {
+		type: Number,
+		required: true,
+	},
+	books: [
+		{
+			type: mongoose.Schema.Types.ObjectId,
+			ref: "Book",
+		},
+	],
 });
-
-export default mongoose.model("Author", AuthorSchema);
+module.exports = mongoose.model("Author", AuthorSchema);
